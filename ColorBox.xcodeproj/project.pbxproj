@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A67F31311CAC1765002B50D0 /* ColorBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67F31301CAC1765002B50D0 /* ColorBox.swift */; };
 		A6C1C80E1CAAB6DC00784098 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C1C80D1CAAB6DC00784098 /* AppDelegate.swift */; };
 		A6C1C8101CAAB6DC00784098 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C1C80F1CAAB6DC00784098 /* ViewController.swift */; };
 		A6C1C8131CAAB6DC00784098 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C1C8111CAAB6DC00784098 /* Main.storyboard */; };
 		A6C1C8151CAAB6DC00784098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6C1C8141CAAB6DC00784098 /* Assets.xcassets */; };
 		A6C1C8181CAAB6DC00784098 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C1C8161CAAB6DC00784098 /* LaunchScreen.storyboard */; };
+		A6C1C8201CAABB4600784098 /* ColorBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C1C81F1CAABB4600784098 /* ColorBoxTableViewCell.swift */; };
+		A6C1C8221CAAC8F700784098 /* ColorClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C1C8211CAAC8F700784098 /* ColorClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A67F31301CAC1765002B50D0 /* ColorBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBox.swift; sourceTree = "<group>"; };
 		A6C1C80A1CAAB6DC00784098 /* ColorBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C1C80D1CAAB6DC00784098 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6C1C80F1CAAB6DC00784098 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		A6C1C8141CAAB6DC00784098 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6C1C8171CAAB6DC00784098 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6C1C8191CAAB6DC00784098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6C1C81F1CAABB4600784098 /* ColorBoxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBoxTableViewCell.swift; sourceTree = "<group>"; };
+		A6C1C8211CAAC8F700784098 /* ColorClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorClient.swift; path = ../ColorClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +60,12 @@
 		A6C1C80C1CAAB6DC00784098 /* ColorBox */ = {
 			isa = PBXGroup;
 			children = (
+				A6C1C8211CAAC8F700784098 /* ColorClient.swift */,
 				A6C1C80D1CAAB6DC00784098 /* AppDelegate.swift */,
 				A6C1C80F1CAAB6DC00784098 /* ViewController.swift */,
+				A6C1C81F1CAABB4600784098 /* ColorBoxTableViewCell.swift */,
 				A6C1C8111CAAB6DC00784098 /* Main.storyboard */,
+				A67F31301CAC1765002B50D0 /* ColorBox.swift */,
 				A6C1C8141CAAB6DC00784098 /* Assets.xcassets */,
 				A6C1C8161CAAB6DC00784098 /* LaunchScreen.storyboard */,
 				A6C1C8191CAAB6DC00784098 /* Info.plist */,
@@ -136,7 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A67F31311CAC1765002B50D0 /* ColorBox.swift in Sources */,
+				A6C1C8201CAABB4600784098 /* ColorBoxTableViewCell.swift in Sources */,
 				A6C1C8101CAAB6DC00784098 /* ViewController.swift in Sources */,
+				A6C1C8221CAAC8F700784098 /* ColorClient.swift in Sources */,
 				A6C1C80E1CAAB6DC00784098 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +301,7 @@
 				A6C1C81E1CAAB6DC00784098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
