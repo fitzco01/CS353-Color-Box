@@ -12,7 +12,7 @@ class ColorClient {
 
     static let sharedClient = ColorClient()
     
-    func getColors(completion: ([ColorBox]) -> ()) {
+    func getColors(_ completion: @escaping ([ColorBox]) -> ()) {
         get(clientURLRequest("videosrc/colors.json")) { (success, object) in
             var colors: [ColorBox] = []
             
@@ -30,30 +30,30 @@ class ColorClient {
         }
     }
     
-    private func get(request: NSMutableURLRequest, completion: (success: Bool, object: AnyObject?) -> ()) {
+    fileprivate func get(_ request: NSMutableURLRequest, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
         dataTask(request, method: "GET", completion: completion)
     }
     
-    private func clientURLRequest(path: String, params: Dictionary<String, AnyObject>? = nil) -> NSMutableURLRequest {
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://thatthinginswift.com/"+path)!)
+    fileprivate func clientURLRequest(_ path: String, params: Dictionary<String, AnyObject>? = nil) -> NSMutableURLRequest {
+        let request = NSMutableURLRequest(url: URL(string: "https://thatthinginswift.com/"+path)!)
 
         return request
     }
     
-    private func dataTask(request: NSMutableURLRequest, method: String, completion: (success: Bool, object: AnyObject?) -> ()) {
-        request.HTTPMethod = method
+    fileprivate func dataTask(_ request: NSMutableURLRequest, method: String, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
+        request.httpMethod = method
         
-        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+        session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if let data = data {
-                let json = try? NSJSONSerialization.JSONObjectWithData(data, options: [])
-                    if let response = response as? NSHTTPURLResponse where 200...299 ~= response.statusCode {
-                        completion(success: true, object: json)
+                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                    if let response = response as? HTTPURLResponse , 200...299 ~= response.statusCode {
+                        completion(true, json as AnyObject?)
                     } else {
-                        completion(success: false, object: json)
+                        completion(false, json as AnyObject?)
                     }
                 }
-            } .resume()
+            })  .resume()
         }
     }

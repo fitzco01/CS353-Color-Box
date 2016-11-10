@@ -13,7 +13,7 @@ class ColorBoxTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
     
-    func configure(color: ColorBox) {
+    func configure(_ color: ColorBox) {
         titleLabel.text = color.name
         descLabel.text = color.desc
         

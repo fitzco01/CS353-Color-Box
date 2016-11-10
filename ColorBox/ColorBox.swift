@@ -20,7 +20,7 @@ struct ColorBox {
         
         self.name = name
         
-        guard let colors = json["rgb"] as? [Int] where colors.count == 3 else {
+        guard let colors = json["rgb"] as? [Int] , colors.count == 3 else {
             return nil
         }
         
